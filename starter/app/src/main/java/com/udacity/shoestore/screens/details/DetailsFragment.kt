@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailsBinding
-import com.udacity.shoestore.screens.listing.ListingFragmentDirections
 
 class DetailsFragment : Fragment() {
 
