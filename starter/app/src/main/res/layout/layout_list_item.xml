@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/fragment_margin"
+    android:padding="@dimen/default_margin"
     android:background="@drawable/list_item_background">
 
     <TextView
@@ -12,9 +12,7 @@
         style="@style/AppTextTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/fragment_margin"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/default_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,11 +23,8 @@
         style="@style/AppTextSubTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/fragment_margin"
-        android:layout_marginTop="@dimen/fragment_margin"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toStartOf="@+id/shoe_size_tv"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
         tools:text="Nike" />
@@ -39,10 +34,7 @@
         style="@style/AppTextSubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fragment_margin"
-        android:layout_marginEnd="@dimen/fragment_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/shoe_company_tv"
         app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
         tools:text="Size: 11" />
@@ -52,10 +44,6 @@
         style="@style/AppTextBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/fragment_margin"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

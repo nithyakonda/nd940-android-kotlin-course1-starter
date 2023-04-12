@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Shoe Store</string>
 
 <!--    Button Labels   -->
     <string name="login">Login</string>
@@ -21,4 +21,7 @@
     <string name="shoe_desc">Description</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="browse">Browse</string>
+    <string name="new_item">New Item</string>
+    <string name="logout">Logout</string>
 </resources>
