@@ -1,54 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/default_margin"
-    android:background="@drawable/list_item_background">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/shoe_name_tv"
-        style="@style/AppTextTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nike Air" />
+    <data>
 
-    <TextView
-        android:id="@+id/shoe_company_tv"
-        style="@style/AppTextSubTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toStartOf="@+id/shoe_size_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
-        tools:text="Nike" />
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
 
-    <TextView
-        android:id="@+id/shoe_size_tv"
-        style="@style/AppTextSubTitle"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/shoe_company_tv"
-        app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
-        tools:text="Size: 11" />
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/list_item_background"
+        android:padding="@dimen/default_margin">
 
-    <TextView
-        android:id="@+id/shoe_desc_tv"
-        style="@style/AppTextBody"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoe_company_tv"
-        tools:text="The Nike Air Force 1 Shadow puts a playful twist on a classic b-ball design. Using a layered approach, doubling the branding and exaggerating the midsole, it highlights AF-1 DNA with a bold, new look.
+        <TextView
+            android:id="@+id/shoe_name_tv"
+            style="@style/AppTextTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@{shoe.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nike Air" />
+
+        <TextView
+            android:id="@+id/shoe_company_tv"
+            style="@style/AppTextSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.company}"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toStartOf="@+id/shoe_size_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
+            tools:text="Nike" />
+
+        <TextView
+            android:id="@+id/shoe_size_tv"
+            style="@style/AppTextSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(shoe.size)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shoe_company_tv"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_name_tv"
+            tools:text="Size: 11" />
+
+        <TextView
+            android:id="@+id/shoe_desc_tv"
+            style="@style/AppTextBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{shoe.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_company_tv"
+            tools:text="The Nike Air Force 1 Shadow puts a playful twist on a classic b-ball design. Using a layered approach, doubling the branding and exaggerating the midsole, it highlights AF-1 DNA with a bold, new look.
 
 " />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

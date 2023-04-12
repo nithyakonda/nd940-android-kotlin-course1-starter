@@ -21,7 +21,8 @@
                 android:id="@+id/listing_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical"
+                android:padding="@dimen/default_margin"/>
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
