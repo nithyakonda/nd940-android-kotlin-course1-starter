@@ -16,9 +16,8 @@ class ShoeListViewModel : ViewModel() {
         _shoeList.value = mutableListOf()
     }
 
-    fun onAddNewItem(shoe : Shoe) {
+    fun onSave(shoe : Shoe) {
         shoes.add(shoe)
         _shoeList.value = shoes
-        Timber.d("List size " + _shoeList.value?.size)
     }
 }

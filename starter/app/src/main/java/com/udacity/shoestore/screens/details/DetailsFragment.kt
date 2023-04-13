@@ -24,10 +24,11 @@ class DetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentDetailsBinding>(inflater, R.layout.fragment_details, container, false)
+        binding.shoe = Shoe("", 0.0, "", "")
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
 
         binding.saveBtn.setOnClickListener { view ->
-            onSaveNewItem()
+            viewModel.onSave(binding.shoe!!)
             view.findNavController().navigate(DetailsFragmentDirections.actionDetailsFragmentToListingFragment())
         }
         binding.cancelBtn.setOnClickListener { view ->
@@ -35,15 +36,5 @@ class DetailsFragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    private fun onSaveNewItem() {
-        val shoe = Shoe(
-            binding.nameEt.text.toString(),
-            binding.sizeEt.text.toString().toDouble(),
-            binding.companyEt.text.toString(),
-            binding.descEt.text.toString()
-        )
-        viewModel.onAddNewItem(shoe)
     }
 }

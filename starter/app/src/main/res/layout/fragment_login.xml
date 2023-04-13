@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Uses constraint layout because the design is complex with many views.
+Constraint layout eliminates using nested view groups which is required otherwise to achieve the same result-->
 
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"

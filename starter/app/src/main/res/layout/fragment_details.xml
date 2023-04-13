@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Uses constraint layout because the design is complex with many views.
+Constraint layout eliminates using nested view groups which is required otherwise to achieve the same result-->
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Nike"
+            android:text="@={shoe.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
             app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Nike"
+            android:text="@={shoe.company}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@+id/name_et" />
@@ -84,7 +93,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number|numberDecimal"
-            android:text="11"
+            android:text="@={`` + shoe.size}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@+id/company_et" />
@@ -95,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
-            android:text="The Nike Air Force 1 Shadow puts a playful twist on a classic b-ball design. Using a layered approach, doubling the branding and exaggerating the midsole, it highlights AF-1 DNA with a bold, new look.  "
+            android:text="@={shoe.description}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/vertical_guideline"
             app:layout_constraintTop_toBottomOf="@+id/size_et" />

@@ -1,49 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Uses linear layout because the design is simple and requires having views positioned
+one below the other-->
+
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".screens.instructions.InstructionsFragment">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontal_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="@dimen/horizontal_guideline_begin" />
 
         <TextView
             android:id="@+id/instructions_tv"
             style="@style/AppTextTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/instructions"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/horizontal_guideline" />
+            android:layout_gravity="center"
+            android:text="@string/instructions"/>
 
         <TextView
             android:id="@+id/instructions_message_tv"
             style="@style/AppTextSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/instructions_message"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructions_tv" />
+             />
 
         <Button
             android:id="@+id/ok_btn"
             style="@style/AppButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ok"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructions_message_tv" />
+            android:layout_gravity="center"
+            android:text="@string/ok"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
