@@ -51,7 +51,8 @@ class ShoeListFragment : Fragment() {
         val container = binding.listingLinearLayout
 
         shoeList.forEach {shoeItem ->
-            val itemBinding: LayoutListItemBinding = DataBindingUtil.inflate(layoutInflater, R.layout.layout_list_item, container, false)
+            val itemBinding: LayoutListItemBinding = DataBindingUtil.inflate(layoutInflater,
+                R.layout.layout_list_item, container, false)
             itemBinding.shoe = shoeItem
 
             container.addView(itemBinding.root)

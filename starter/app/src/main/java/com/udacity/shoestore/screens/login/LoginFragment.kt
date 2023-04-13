@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
@@ -37,7 +36,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun login() {
-        if (validate()) {
+        if (inputValidationSuccess()) {
             if (viewModel.hasLoggedIn.value!!) {
                 this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToShoeListFragment())
             } else {
@@ -48,7 +47,7 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun validate() : Boolean {
+    private fun inputValidationSuccess() : Boolean {
         binding.apply {
             if (usernameEt.length() == 0) {
                 usernameEt.error = getString(R.string.empty_input_validation_error)

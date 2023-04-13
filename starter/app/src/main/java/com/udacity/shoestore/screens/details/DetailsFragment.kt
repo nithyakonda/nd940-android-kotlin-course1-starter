@@ -12,7 +12,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailsBinding
 import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.screens.shoelist.ShoeListViewModel
-import kotlinx.android.synthetic.main.layout_list_item.*
 
 class DetailsFragment : Fragment() {
 
@@ -29,7 +28,7 @@ class DetailsFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
 
         binding.saveBtn.setOnClickListener { view ->
-            if (validate()) {
+            if (inputValidationSuccess()) {
                 viewModel.onSave(binding.shoe!!)
                 view.findNavController()
                     .navigate(DetailsFragmentDirections.actionDetailsFragmentToListingFragment())
@@ -42,7 +41,7 @@ class DetailsFragment : Fragment() {
         return binding.root
     }
 
-    private fun validate() : Boolean {
+    private fun inputValidationSuccess() : Boolean {
         binding.apply {
             if (nameEt.length() == 0) {
                 nameEt.error = getString(R.string.empty_input_validation_error)
