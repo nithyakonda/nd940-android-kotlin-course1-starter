@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Uses constraint layout in order to position the floating action button on the bottom right
+corner overlaying the scrollview. This is hard to achieve with linear layout-->
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
